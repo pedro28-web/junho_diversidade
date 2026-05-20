@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pluralidade em Cores</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+      --roxo:#5B3FD6;
+      --magenta:#E646A1;
+      --azul:#4A90E2;
+      --coral:#FF7A59;
+      --lavanda:#C8B6FF;
+      --off:#F7F5F2;
+      --grafite:#1F1F24;
+
+      --omni1:#FF6B9A;
+      --omni2:#FF4F81;
+      --omni3:#A95CFF;
+      --omni4:#5AA9FF;
+      --omni5:#7ED6FF;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--off);
+      color: var(--grafite);
+      overflow-x:hidden;
+    }
+
+    /* BACKGROUND */
+
+    .bg{
+      position:fixed;
+      width:100%;
+      height:100vh;
+      z-index:-1;
+      overflow:hidden;
+      top:0;
+      left:0;
+      background:
+      radial-gradient(circle at top left, rgba(230,70,161,0.3), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(91,63,214,0.3), transparent 30%),
+      linear-gradient(120deg,#f7f5f2,#efeaff);
+    }
+
+    .ball{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(40px);
+      opacity:0.5;
+      animation:float 10s infinite alternate;
+    }
+
+    .b1{
+      width:200px;
+      height:200px;
+      background:var(--magenta);
+      top:10%;
+      left:-5%;
+    }
+
+    .b2{
+      width:250px;
+      height:250px;
+      background:var(--roxo);
+      right:-5%;
+      top:40%;
+    }
+
+    .b3{
+      width:180px;
+      height:180px;
+      background:var(--azul);
+      bottom:-5%;
+      left:30%;
+    }
+
+    @keyframes float{
+      from{
+        transform:translateY(0px);
+      }
+      to{
+        transform:translateY(40px);
+      }
+    }
+
+    /* NAV */
+
+    nav{
+      width:100%;
+      padding:20px;
+      position:fixed;
+      top:0;
+      left:0;
+      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,0.4);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:999;
+    }
+
+    nav h2{
+      color:var(--roxo);
+      font-size:1.2rem;
+    }
+
+    nav ul{
+      display:flex;
+      gap:20px;
+      list-style:none;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:var(--grafite);
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:var(--magenta);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:120px 20px 60px;
+    }
+
+    .hero-content{
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:3rem;
+      margin-bottom:20px;
+      background:linear-gradient(90deg,var(--roxo),var(--magenta));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      font-size:1.1rem;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      background:linear-gradient(90deg,var(--magenta),var(--coral));
+      border:none;
+      color:white;
+      padding:15px 30px;
+      border-radius:50px;
+      font-size:1rem;
+      cursor:pointer;
+      transition:0.3s;
+      text-decoration:none;
+      display:inline-block;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 20px rgba(230,70,161,0.4);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 20px;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .title h2{
+      font-size:2rem;
+      color:var(--roxo);
+      margin-bottom:10px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.6);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.4);
+      border-radius:25px;
+      padding:30px;
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:var(--magenta);
+    }
+
+    .card p{
+      line-height:1.7;
+    }
+
+    /* OMNI */
+
+    .omni{
+      background:
+      linear-gradient(
+      135deg,
+      var(--omni1),
+      var(--omni2),
+      var(--omni3),
+      var(--omni4),
+      var(--omni5)
+      );
+      color:white;
+    }
+
+    .omni .title h2{
+      color:white;
+    }
+
+    .omni-box{
+      max-width:900px;
+      margin:auto;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      padding:40px;
+      border-radius:30px;
+    }
+
+    .omni-box p{
+      line-height:1.9;
+      margin-bottom:20px;
+    }
+
+    /* SIGLA */
+
+    .sigla-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+      gap:15px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .sigla{
+      background:white;
+      border-radius:20px;
+      padding:20px;
+      text-align:center;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .sigla:hover{
+      background:var(--lavanda);
+    }
+
+    /* MANIFESTO */
+
+    .manifesto{
+      max-width:1000px;
+      margin:auto;
+      text-align:center;
+      line-height:2;
+      font-size:1.1rem;
+    }
+
+    /* SLOGANS */
+
+    .slogans{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      max-width:800px;
+      margin:auto;
+    }
+
+    .slogan{
+      background:white;
+      padding:25px;
+      border-left:6px solid var(--magenta);
+      border-radius:15px;
+      font-size:1.1rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:var(--grafite);
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:2.2rem;
+      }
+
+      .hero p{
+        font-size:1rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="bg">
+  <div class="ball b1"></div>
+  <div class="ball b2"></div>
+  <div class="ball b3"></div>
+</div>
+
+<nav>
+  <h2>Pluralidade em Cores</h2>
+
+  <ul>
+    <li><a href="#junho">Junho</a></li>
+    <li><a href="#paradas">Paradas</a></li>
+    <li><a href="#omni">Omnissexuais</a></li>
+    <li><a href="#sigla">Sigla</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Bem-vindo à pluralidade.</h1>
+
+    <p>
+      Diversidade é transformar diferenças em pertencimento.
+      Este site apresenta informações sobre o mês do orgulho LGBTQIAPN+,
+      inclusão, identidade e respeito, com foco especial na omnissexualidade.
+    </p>
+
+    <a href="#omni" class="btn">
+      Conheça mais sobre pessoas omnissexuais
+    </a>
+
+  </div>
+
+</section>
+
+<section id="junho">
+
+  <div class="title">
+    <h2>Por que junho?</h2>
+
+    <p>Mês do orgulho LGBTQIAPN+</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Stonewall</h3>
+
+      <p>
+        Junho é considerado o mês do orgulho por causa da Revolta de Stonewall,
+        ocorrida em 1969, em Nova York. O acontecimento marcou a luta pelos
+        direitos da comunidade LGBTQIAPN+.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Representatividade</h3>
+
+      <p>
+        O mês simboliza visibilidade, respeito e inclusão, reforçando
+        a importância de cada identidade e experiência.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Orgulho</h3>
+
+      <p>
+        O orgulho representa a liberdade de existir sem medo,
+        valorizando autenticidade, pertencimento e diversidade.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="paradas">
+
+  <div class="title">
+    <h2>Paradas LGBTQIAPN+</h2>
+
+    <p>Eventos que acontecem no Brasil e no mundo</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Brasil</h3>
+
+      <p>
+        A Parada do Orgulho LGBT+ de São Paulo é uma das maiores do mundo,
+        reunindo milhões de pessoas em manifestações culturais,
+        artísticas e sociais.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Estados Unidos</h3>
+
+      <p>
+        Nova York realiza eventos históricos ligados ao movimento
+        LGBTQIAPN+, especialmente pela importância de Stonewall.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Europa</h3>
+
+      <p>
+        Países como Espanha e Alemanha também promovem grandes paradas,
+        celebrando diversidade, cultura e inclusão.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="omni" id="omni">
+
+  <div class="title">
+    <h2>Conheça mais sobre pessoas omnissexuais</h2>
+  </div>
+
+  <div class="omni-box">
+
+    <p>
+      Pessoas omnissexuais sentem atração por todos os gêneros,
+      reconhecendo e valorizando as diferenças entre eles.
+    </p>
+
+    <p>
+      Embora algumas pessoas confundam omnissexualidade com pansexualidade,
+      cada identidade possui experiências e significados próprios.
+    </p>
+
+    <p>
+      A bandeira omnissexual possui tons de rosa, roxo e azul,
+      representando diversidade, pluralidade e conexão.
+    </p>
+
+  </div>
+
+</section>
+
+<section id="sigla">
+
+  <div class="title">
+    <h2>O que significa LGBTQIAPN+?</h2>
+  </div>
+
+  <div class="sigla-grid">
+
+    <div class="sigla">L<br>Lésbicas</div>
+    <div class="sigla">G<br>Gays</div>
+    <div class="sigla">B<br>Bissexuais</div>
+    <div class="sigla">T<br>Trans</div>
+    <div class="sigla">Q<br>Queer</div>
+    <div class="sigla">I<br>Intersexo</div>
+    <div class="sigla">A<br>Assexual</div>
+    <div class="sigla">P<br>Pansexual</div>
+    <div class="sigla">N<br>Não-binário</div>
+    <div class="sigla">+<br>Outras</div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="title">
+    <h2>Tecnologia e Inclusão</h2>
+  </div>
+
+  <div class="manifesto">
+
+    <p>
+      A tecnologia molda o presente e define o futuro.
+      Para que esse futuro seja verdadeiramente inovador,
+      ele precisa incluir diferentes vozes, experiências e identidades.
+    </p>
+
+    <p>
+      Inclusão significa construir espaços onde pessoas LGBTQIAPN+,
+      mulheres, pessoas negras, pessoas com deficiência e tantas
+      outras comunidades possam existir, criar e liderar com segurança.
+    </p>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="title">
+    <h2>Slogans</h2>
+  </div>
+
+  <div class="slogans">
+
+    <div class="slogan">
+      Orgulho é existir sem precisar se esconder.
+    </div>
+
+    <div class="slogan">
+      Toda identidade merece espaço, respeito e voz.
+    </div>
+
+    <div class="slogan">
+      Ser quem você é nunca deveria ser um ato de coragem.
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p>
+    Projeto informativo sobre diversidade, inclusão e orgulho LGBTQIAPN+.
+  </p>
+
+</footer>
+
+</body>
+</html>
