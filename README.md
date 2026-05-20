@@ -92,7 +92,7 @@ Criar um site informativo e visualmente acolhedor sobre diversidade e orgulho LG
 1. Clone o repositório:
 
 ```bash
-git clone LINK_DO_REPOSITORIO
+git clone [LINK_DO_REPOSITORIO](https://github.com/pedro28-web/junho_diversidade/)
 ```
 
 2. Abra o arquivo principal:
