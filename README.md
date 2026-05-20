@@ -21,10 +21,6 @@ O site foi desenvolvido com foco principal em dispositivos móveis, mas também 
 
 # 🎨 Paleta de cores
 
-| Cor              | Hex       |
-
-|                  |           |
-
 | Roxo profundo    | `#5B3FD6` |
 
 | Magenta vibrante | `#E646A1` |
