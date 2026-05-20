@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Omnissexuais | Pluralidade em Cores</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+      --rosa:#FF4FA3;
+      --roxo:#7B4DFF;
+      --azul:#3D5AFE;
+      --lavanda:#D8C8FF;
+      --azulClaro:#8FD3FF;
+      --off:#F8F7F4;
+      --grafite:#1E1E24;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:
+      linear-gradient(135deg,#fff6fb,#f2edff,#eef5ff);
+
+      color:var(--grafite);
+      overflow-x:hidden;
+    }
+
+    /* BACKGROUND OMNI */
+    .bg{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      overflow:hidden;
+
+      background:
+      radial-gradient(circle at top left,
+      rgba(255,79,163,0.35),
+      transparent 30%),
+
+      radial-gradient(circle at center right,
+      rgba(123,77,255,0.35),
+      transparent 35%),
+
+      radial-gradient(circle at bottom left,
+      rgba(61,90,254,0.25),
+      transparent 35%),
+
+      linear-gradient(135deg,#fff3fa,#f1ebff,#eef4ff);
+    }
+
+    .blob{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(50px);
+      opacity:0.5;
+      animation:float 8s infinite alternate;
+    }
+
+    .b1{
+      width:250px;
+      height:250px;
+      background:#FF4FA3;
+      top:5%;
+      left:-5%;
+    }
+
+    .b2{
+      width:300px;
+      height:300px;
+      background:#7B4DFF;
+      right:-10%;
+      top:40%;
+    }
+
+    .b3{
+      width:220px;
+      height:220px;
+      background:#8FD3FF;
+      bottom:-5%;
+      left:30%;
+    }
+
+    @keyframes float{
+      from{ transform:translateY(0px); }
+      to{ transform:translateY(30px); }
+    }
+
+    /* NAV */
+    nav{
+      width:100%;
+      padding:20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:999;
+      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,0.4);
+    }
+
+    nav h2{
+      color:#7B4DFF;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#1E1E24;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#FF4FA3;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 20px 60px;
+    }
+
+    .hero-content{
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      margin-bottom:20px;
+
+      background:linear-gradient(
+        90deg,
+        #FF4FA3,
+        #7B4DFF,
+        #3D5AFE,
+        #8FD3FF
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+      text-shadow:0 0 20px rgba(255,79,163,0.25);
+    }
+
+    .hero p{
+      line-height:1.9;
+      font-size:1.1rem;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 30px;
+      border-radius:50px;
+      text-decoration:none;
+      color:white;
+
+      background:linear-gradient(90deg,#FF4FA3,#7B4DFF,#3D5AFE);
+
+      box-shadow:0 0 25px rgba(123,77,255,0.25);
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    section{
+      padding:90px 20px;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .title h2{
+      font-size:2rem;
+      color:#7B4DFF;
+      margin-bottom:10px;
+    }
+
+    /* CARDS */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .card{
+      background:
+      linear-gradient(
+      135deg,
+      rgba(255,79,163,0.12),
+      rgba(123,77,255,0.12),
+      rgba(61,90,254,0.12)
+      );
+
+      backdrop-filter:blur(12px);
+
+      border:1px solid rgba(255,255,255,0.5);
+
+      border-radius:25px;
+      padding:30px;
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h3{
+      color:#FF4FA3;
+      margin-bottom:15px;
+    }
+
+    .card p{
+      line-height:1.8;
+    }
+
+    /* MANIFESTOS */
+    .manifestos{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .manifesto{
+      background:white;
+      border-radius:25px;
+      padding:30px;
+      border-top:6px solid #7B4DFF;
+    }
+
+    .manifesto h3{
+      margin-bottom:15px;
+      color:#7B4DFF;
+    }
+
+    .manifesto p{
+      line-height:1.9;
+    }
+
+    /* SLOGANS */
+    .slogans{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      max-width:800px;
+      margin:auto;
+    }
+
+    .slogan{
+      background:white;
+      padding:25px;
+      border-left:6px solid #FF4FA3;
+      border-radius:20px;
+      font-size:1.1rem;
+    }
+
+    footer{
+      background:#1E1E24;
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:2.4rem;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:10px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="bg">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<nav>
+  <h2>Omnissexuais</h2>
+  <a href="index.html">← Voltar</a>
+</nav>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Amor sem limites, coração sem rótulos.</h1>
+
+    <p>
+      A omnissexualidade representa atração por todos os gêneros,
+      valorizando a individualidade, conexão e diversidade humana.
+    </p>
+
+    <a href="#manifestos" class="btn">Explorar</a>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="title">
+    <h2>O que é omnissexualidade?</h2>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Pluralidade</h3>
+      <p>Reconhece todos os gêneros e formas de identidade.</p>
+    </div>
+
+    <div class="card">
+      <h3>Conexão</h3>
+      <p>Atração baseada em pessoas, não em rótulos.</p>
+    </div>
+
+    <div class="card">
+      <h3>Respeito</h3>
+      <p>Toda identidade merece visibilidade e acolhimento.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="manifestos">
+
+  <div class="title">
+    <h2>Manifestos</h2>
+  </div>
+
+  <div class="manifestos">
+
+    <div class="manifesto">
+      <h3>Liberdade Afetiva</h3>
+      <p>Amar sem fronteiras, enxergando pessoas além de rótulos.</p>
+    </div>
+
+    <div class="manifesto">
+      <h3>Inclusão e Respeito</h3>
+      <p>Todo amor genuíno merece ser respeitado e valorizado.</p>
+    </div>
+
+    <div class="manifesto">
+      <h3>Descoberta</h3>
+      <p>Amar também é explorar conexões e experiências humanas.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="title">
+    <h2>Slogans</h2>
+  </div>
+
+  <div class="slogans">
+
+    <div class="slogan">Amor sem limites, coração sem rótulos.</div>
+    <div class="slogan">Conecte-se com pessoas, não com gêneros.</div>
+    <div class="slogan">Todo amor é válido. Todo sentimento é real.</div>
+
+  </div>
+
+</section>
+
+<footer>
+  Página informativa sobre omnissexualidade e diversidade.
+</footer>
+
+</body>
+</html>
