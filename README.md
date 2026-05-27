@@ -1,111 +1,64 @@
 # 🌈 Pluralidade em Cores
 
-Projeto desenvolvido na Etec em comemoração ao mês do orgulho LGBTQIAPN+, com foco em diversidade, inclusão e representatividade.
-
-O site foi criado com o objetivo de informar, conscientizar e apresentar conteúdos sobre o mês de junho, a comunidade LGBTQIAPN+ e a identidade omnissexual, de forma visual, moderna e responsiva.
+Projeto desenvolvido com foco na valorização da diversidade, inclusão e representatividade LGBTQIAPN+ através de uma experiência visual moderna, interativa e acolhedora.
 
 ---
 
-# 📄 Estrutura do projeto
+## 📖 Sobre o projeto
 
-O site está dividido em duas páginas:
+O site **Pluralidade em Cores** foi criado como um projeto escolar com o objetivo de informar e conscientizar sobre:
 
-- **Página inicial (index.html)**
-  - Mês do orgulho LGBTQIAPN+
-  - Significado de junho
-  - Paradas LGBTQIAPN+ no Brasil e no mundo
-  - Sigla LGBTQIAPN+
-  - Manifesto sobre inclusão na tecnologia
+- O mês do orgulho LGBTQIAPN+
+- A importância da representatividade
+- A diversidade de identidades e orientações
+- A omnissexualidade
+- Inclusão e respeito
 
-- **Página Omnissexual (omnissexuais.html)**
-  - Explicação sobre omnissexualidade
-  - Manifestos (liberdade afetiva, inclusão e descoberta)
-  - Slogans de impacto
-  - Identidade visual própria com paleta exclusiva
+O projeto utiliza um visual moderno com animações, gradientes, efeitos visuais e integração com **Vanta.js** para criar uma experiência mais imersiva.
 
 ---
 
-# 📱 Responsividade
+## ✨ Funcionalidades
 
-O site foi desenvolvido com foco principal em dispositivos móveis (mobile first), mas também se adapta corretamente a computadores e tablets.
-
----
-
-# 🎨 Paletas de cores
-
-## 🌈 Paleta principal (site geral)
-
-| Cor               | Hex       |
-|------------------|-----------|
-| Roxo profundo     | `#5B3FD6` |
-| Magenta vibrante  | `#E646A1` |
-| Azul acolhedor    | `#4A90E2` |
-| Coral suave       | `#FF7A59` |
-| Lavanda clara     | `#C8B6FF` |
-| Off-white         | `#F7F5F2` |
-| Grafite escuro    | `#1F1F24` |
+✔️ Página inicial informativa  
+✔️ Página dedicada à omnissexualidade  
+✔️ Mascote personalizado do projeto  
+✔️ Background animado com Vanta.js  
+✔️ Design responsivo  
+✔️ Navegação suave  
+✔️ Cards interativos  
+✔️ Visual moderno com glassmorphism  
 
 ---
 
-## 🏳️‍🌈 Paleta Omnissexual
-
-| Cor           | Hex       |
-|--------------|-----------|
-| Rosa          | `#FF4FA3` |
-| Roxo          | `#7B4DFF` |
-| Azul profundo | `#3D5AFE` |
-| Azul claro    | `#8FD3FF` |
-| Lavanda       | `#D8C8FF` |
-| Off-white     | `#F8F7F4` |
-| Grafite       | `#1E1E24` |
-
----
-
-# 💻 Tecnologias utilizadas
+## 🛠️ Tecnologias utilizadas
 
 - HTML5
 - CSS3
-- JavaScript (básico)
+- JavaScript
+- Vanta.js
+- Three.js
 
 ---
 
-# ✨ Funcionalidades
+## 🎨 Estilo visual
 
-- Layout moderno e responsivo
-- Navegação entre páginas
-- Background animado com gradientes
-- Cards interativos
-- Conteúdo informativo e educativo
-- Identidade visual personalizada por seção
-- Design mobile first
+O projeto foi desenvolvido utilizando:
 
----
-
-# 📚 Objetivo
-
-Criar um site informativo e visualmente acolhedor sobre diversidade e orgulho LGBTQIAPN+, incentivando respeito, inclusão e representatividade através da tecnologia.
+- Gradientes vibrantes
+- Efeitos blur
+- Glassmorphism
+- Animações suaves
+- Paleta inspirada nas bandeiras LGBTQIAPN+
 
 ---
 
-# 🚀 Como executar
-
-1. Clone o repositório:
+## 📂 Estrutura do projeto
 
 ```bash
-git clone [LINK_DO_REPOSITORIO](https://github.com/pedro28-web/junho_diversidade/)
-```
-
-2. Abra o arquivo principal:
-
-```bash
-index.html
-```
-
----
-
-# 👨‍💻 Desenvolvido por
-
-Lucas Lima  
-Pedro Willians  
-
-Projeto acadêmico desenvolvido na Etec.
+📁 Projeto
+ ├── index.html
+ ├── Omnissexuais.html
+ ├── 📁 Imagens
+ │    └── Mascote sem fundo.png
+ └── README.md
