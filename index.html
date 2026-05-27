@@ -39,27 +39,6 @@
       overflow:hidden;
       top:0;
       left:0;
-      background:
-      radial-gradient(circle at top left, rgba(230,70,161,0.3), transparent 30%),
-      radial-gradient(circle at bottom right, rgba(91,63,214,0.3), transparent 30%),
-      linear-gradient(120deg,#f7f5f2,#efeaff);
-    }
-
-    .ball{
-      position:absolute;
-      border-radius:50%;
-      filter:blur(40px);
-      opacity:0.5;
-      animation:float 10s infinite alternate;
-    }
-
-    .b1{width:200px;height:200px;background:var(--magenta);top:10%;left:-5%;}
-    .b2{width:250px;height:250px;background:var(--roxo);right:-5%;top:40%;}
-    .b3{width:180px;height:180px;background:var(--azul);bottom:-5%;left:30%;}
-
-    @keyframes float{
-      from{transform:translateY(0px);}
-      to{transform:translateY(40px);}
     }
 
     /* NAV */
@@ -77,7 +56,10 @@
       z-index:999;
     }
 
-    nav h2{color:var(--roxo);font-size:1.2rem;}
+    nav h2{
+      color:var(--roxo);
+      font-size:1.2rem;
+    }
 
     nav ul{
       display:flex;
@@ -91,7 +73,9 @@
       font-weight:bold;
     }
 
-    nav a:hover{color:var(--magenta);}
+    nav a:hover{
+      color:var(--magenta);
+    }
 
     /* HERO */
     .hero{
@@ -101,14 +85,22 @@
       align-items:center;
       text-align:center;
       padding:120px 20px 60px;
+      position:relative;
     }
 
-    .hero-content{max-width:900px;}
+    .hero-content{
+      max-width:900px;
+    }
 
     .hero h1{
       font-size:3rem;
       margin-bottom:20px;
-      background:linear-gradient(90deg,var(--roxo),var(--magenta));
+
+      background:linear-gradient(
+      90deg,
+      var(--roxo),
+      var(--magenta));
+
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
@@ -119,20 +111,66 @@
       margin-bottom:30px;
     }
 
-    .btn{
-      background:linear-gradient(90deg,var(--magenta),var(--coral));
-      border:none;
-      color:white;
-      padding:15px 30px;
-      border-radius:50px;
-      font-size:1rem;
-      text-decoration:none;
-      display:inline-block;
+    .mascote{
+      position:absolute;
+      top:140px;
+      left:40px;
+
+      width:140px;
+
+      animation:floatMascote 4s ease-in-out infinite;
+
+      filter:
+      drop-shadow(0 0 20px rgba(230,70,161,0.25));
+
+      opacity:0.95;
     }
 
-    .btn:hover{transform:scale(1.05);}
+    @keyframes floatMascote{
 
-    section{padding:90px 20px;}
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    .btn{
+      background:linear-gradient(
+      90deg,
+      var(--magenta),
+      var(--coral));
+
+      border:none;
+      color:white;
+
+      padding:15px 30px;
+
+      border-radius:50px;
+
+      font-size:1rem;
+
+      text-decoration:none;
+
+      display:inline-block;
+
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    section{
+      padding:90px 20px;
+    }
 
     .title{
       text-align:center;
@@ -147,36 +185,61 @@
 
     .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:
+      repeat(auto-fit,minmax(250px,1fr));
+
       gap:25px;
+
       max-width:1200px;
+
       margin:auto;
     }
 
     .card{
       background:rgba(255,255,255,0.6);
+
       border-radius:25px;
+
       padding:30px;
+
+      backdrop-filter:blur(10px);
     }
 
-    .card h3{color:var(--magenta);margin-bottom:15px;}
-    .card p{line-height:1.8;}
+    .card h3{
+      color:var(--magenta);
+      margin-bottom:15px;
+    }
+
+    .card p{
+      line-height:1.8;
+    }
 
     /* SIGLA */
     .sigla-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(120px,1fr));
+
       gap:15px;
+
       max-width:1000px;
+
       margin:auto;
     }
 
     .sigla{
       background:white;
+
       border-radius:20px;
+
       padding:20px;
+
       text-align:center;
+
       font-weight:bold;
+
+      backdrop-filter:blur(10px);
     }
 
     .sigla img{
@@ -197,23 +260,49 @@
 
     .slogan{
       background:white;
+
       padding:25px;
+
       border-left:6px solid var(--magenta);
+
       border-radius:15px;
+
       font-size:1.1rem;
+
       line-height:1.8;
+
+      backdrop-filter:blur(10px);
     }
 
     footer{
-      background:var(--grafite);
+      background:rgba(31,31,36,0.9);
+
       color:white;
+
       text-align:center;
+
       padding:40px 20px;
+
+      backdrop-filter:blur(10px);
     }
 
     @media(max-width:768px){
-      .hero h1{font-size:2.2rem;}
-      nav{flex-direction:column;gap:10px;}
+
+      .hero h1{
+        font-size:2.2rem;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .mascote{
+        width:100px;
+        left:20px;
+        top:180px;
+      }
+
     }
 
   </style>
@@ -221,24 +310,23 @@
 
 <body>
 
-<div class="bg">
-  <div class="ball b1"></div>
-  <div class="ball b2"></div>
-  <div class="ball b3"></div>
-</div>
+<div class="bg"></div>
 
 <nav>
+
   <h2>Pluralidade em Cores</h2>
 
   <ul>
-    <li><a href="#junho">Junho</a></li>
     <li><a href="#paradas">Paradas</a></li>
-    <li><a href="Omnissexuais.html" target="_blank">Omnissexuais</a></li>
+    <li><a href="omnisexual.html" target="_blank">Omnissexuais</a></li>
     <li><a href="#sigla">Sigla</a></li>
   </ul>
+
 </nav>
 
 <section class="hero">
+
+  <img src="Imagens/Mascote sem fundo.png" class="mascote" alt="Mascote da diversidade">
 
   <div class="hero-content">
 
@@ -251,53 +339,28 @@
       sobre inclusão social e identidade.
     </p>
 
-    <a href="Omnissexuais.html" class="btn" target="_blank">
-      Conheça mais sobre pessoas omnissexuais
-    </a>
+    <div class="card" style="max-width:800px; margin:auto; margin-top:25px;">
 
-  </div>
+      <h3 style="margin-bottom:15px;">
+        Por que junho?
+      </h3>
 
-</section>
-
-<section id="junho">
-  <div class="title">
-    <h2>Por que junho?</h2>
-  </div>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Stonewall</h3>
       <p>
-        Junho foi escolhido como o mês do orgulho devido à Revolta de Stonewall,
-        ocorrida em 1969 em Nova York. Esse evento marcou o início do movimento
-        moderno pelos direitos LGBTQIAPN+, representando resistência contra a
-        discriminação e violência.
+        Junho é reconhecido mundialmente como o mês do orgulho LGBTQIAPN+
+        devido à Revolta de Stonewall, ocorrida em 1969. Desde então,
+        o período passou a simbolizar resistência, representatividade,
+        inclusão e liberdade, reforçando a importância do respeito às
+        diferentes identidades e orientações presentes na sociedade.
       </p>
-    </div>
 
-    <div class="card">
-      <h3>Representatividade</h3>
-      <p>
-        O mês de junho simboliza visibilidade e reconhecimento das diferentes
-        identidades. Ele reforça a importância de dar voz a pessoas que por muito
-        tempo foram silenciadas ou invisibilizadas socialmente.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Orgulho</h3>
-      <p>
-        O orgulho LGBTQIAPN+ não se trata apenas de celebração, mas de afirmação
-        de existência. É sobre viver com autenticidade, liberdade e dignidade,
-        sem medo de ser quem se é.
-      </p>
     </div>
 
   </div>
+
 </section>
 
 <section id="paradas">
+
   <div class="title">
     <h2>Paradas LGBTQIAPN+</h2>
   </div>
@@ -305,32 +368,42 @@
   <div class="cards">
 
     <div class="card">
+
       <h3>Brasil</h3>
+
       <p>
         A Parada do Orgulho LGBT+ de São Paulo é considerada uma das maiores do
         mundo, reunindo milhões de pessoas em manifestações culturais, políticas
         e sociais pela igualdade de direitos.
       </p>
+
     </div>
 
     <div class="card">
+
       <h3>Estados Unidos</h3>
+
       <p>
         Em Nova York, as paradas têm forte ligação com o movimento histórico de
         Stonewall, reforçando a importância da luta por direitos civis e
         igualdade social.
       </p>
+
     </div>
 
     <div class="card">
+
       <h3>Europa</h3>
+
       <p>
         Países como Espanha, Alemanha e Reino Unido realizam grandes eventos que
         celebram a diversidade e promovem discussões sobre inclusão e direitos humanos.
       </p>
+
     </div>
 
   </div>
+
 </section>
 
 <section id="sigla">
@@ -372,9 +445,19 @@
     </div>
 
   </div>
+
+  <div style="text-align:center; margin-top:50px;">
+
+    <a href="omnisexual.html" class="btn" target="_blank">
+      Conheça mais sobre pessoas omnissexuais
+    </a>
+
+  </div>
+
 </section>
 
 <section>
+
   <div class="title">
     <h2>Slogans</h2>
   </div>
@@ -394,13 +477,47 @@
     </div>
 
   </div>
+
 </section>
 
 <footer>
+
   <p>Projeto informativo sobre diversidade LGBTQIAPN+</p>
+
   <p>Lucas Lima - 10891</p>
+
   <p>Pedro Willians - 10252</p>
+
 </footer>
+
+<!-- VANTA JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+
+<script>
+VANTA.FOG({
+
+  el: ".bg",
+
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+
+  minHeight: 200.00,
+  minWidth: 200.00,
+
+  highlightColor: 0xffffff,
+  midtoneColor: 0xfc34fc,
+  lowlightColor: 0x8d2fcf,
+  baseColor: 0xffffff,
+
+  blurFactor: 0.65,
+  speed: 0.80,
+  zoom: 1.30
+
+})
+</script>
 
 </body>
 </html>
